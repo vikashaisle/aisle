@@ -1,4 +1,4 @@
-# aisle
+# aisle virtualbox copy & Drag and Drop
 copy text from my Windows host but cannot paste it into the VirtualBox VM
 
 
@@ -23,32 +23,35 @@ If this returns nothing, Guest Additions either aren't installed or aren't loade
 
 bash ##************************************##
 
-sudo dnf install -y gcc make perl elfutils-libelf-devel kernel-devel-$(uname -r) bzip2
+**sudo dnf install -y gcc make perl elfutils-libelf-devel kernel-devel-$(uname -r) bzip2**
 
 Then in the VM window menu: Devices → Insert Guest Additions CD image #####################
 
 bash ##************************************##
 
-sudo mount /dev/cdrom /mnt
-sudo /mnt/VBoxLinuxAdditions.run
-sudo reboot
+**sudo mount /dev/cdrom /mnt**
+**sudo /mnt/VBoxLinuxAdditions.run**
+**sudo reboot**
 
 3. Restart the clipboard service inside the guest (if Additions are already installed)
 Sometimes the service just needs a kick:
 
 bash       ##************************************##
-sudo systemctl restart vboxadd-service
+
+**sudo systemctl restart vboxadd-service**
 
 Or if using a GUI desktop, log out and back in — VBoxClient (the clipboard helper) sometimes needs to restart with the desktop session.
 
 4. Confirm VBoxClient is running (GUI desktop installs only)
 bash   ##************************************##
-ps aux | grep VBoxClient
+
+**ps aux | grep VBoxClient**
 
 You should see VBoxClient --clipboard in the list. If it's missing, start it manually:
 
 bash ##************************************##
-VBoxClient --clipboard
+
+**VBoxClient --clipboard**
 
 5. If you're on a Minimal/no-GUI install
 Clipboard sharing requires a graphical session running inside the guest — there's no clipboard concept in a pure terminal/console. If you're working via SSH (PuTTY/Windows Terminal), copy-paste already works normally through the terminal itself (right-click paste in PuTTY, or Ctrl+Shift+V in Windows Terminal) — no VirtualBox clipboard setting applies there at all.
