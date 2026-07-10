@@ -16,16 +16,19 @@ This is the #1 cause — clipboard sharing does not work without Guest Additions
 Check inside the VM:
 
 bash ##************************************##
+
 lsmod | grep vboxguest
 
 If this returns nothing, Guest Additions either aren't installed or aren't loaded. Install them:
 
 bash ##************************************##
+
 sudo dnf install -y gcc make perl elfutils-libelf-devel kernel-devel-$(uname -r) bzip2
 
 Then in the VM window menu: Devices → Insert Guest Additions CD image #####################
 
 bash ##************************************##
+
 sudo mount /dev/cdrom /mnt
 sudo /mnt/VBoxLinuxAdditions.run
 sudo reboot
