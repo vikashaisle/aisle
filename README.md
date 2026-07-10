@@ -17,7 +17,7 @@ Check inside the VM:
 
 bash ##************************************##
 
-lsmod | grep vboxguest
+**lsmod | grep vboxguest**
 
 If this returns nothing, Guest Additions either aren't installed or aren't loaded. Install them:
 
