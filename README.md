@@ -5,6 +5,9 @@ mount /dev/cdrom /mnt/cdrom
 cd /mnt/cdrom
 ./VBoxLinuxAdditions.run
 
+
+sudo ./VBoxLinuxAdditions.run
+
 copy text from my Windows host but cannot paste it into the VirtualBox VM
 
 
