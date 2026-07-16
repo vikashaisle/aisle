@@ -1,4 +1,10 @@
 # aisle virtualbox copy & Drag and Drop
+
+mkdir -p /mnt/cdrom
+mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+./VBoxLinuxAdditions.run
+
 copy text from my Windows host but cannot paste it into the VirtualBox VM
 
 
